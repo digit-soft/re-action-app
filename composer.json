@@ -4,6 +4,7 @@
     "keywords": ["re-action", "framework", "digit-soft", "react php framework", "project template"],
     "type": "project",
     "minimum-stability": "dev",
+    "license": "MIT",
     "require": {
         "digit-soft/re-action": "*"
     },
