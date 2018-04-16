@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "ignore": [".hg",".idea"],
+  "execMap": {
+    "php": "php"
+  },
+  "restartable": "r",
+  "ext": "php"
+}

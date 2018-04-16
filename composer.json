@@ -1,0 +1,16 @@
+{
+    "name": "digit-soft/re-action-app",
+    "description": "Re-action react php framework app",
+    "keywords": ["re-action", "framework", "digit-soft", "react php framework", "project template"],
+    "type": "project",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "require": {
+        "digit-soft/re-action": "*"
+    },
+    "autoload": {
+        "psr-4": { "App\\": "" }
+    },
+    "require-dev": {
+    }
+}
