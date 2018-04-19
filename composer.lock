@@ -43,17 +43,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digit-soft/re-action.git",
-                "reference": "98b474f06952c34d2886740541846c8cba28b0f9"
+                "reference": "123a6328c31e6d28257d3beb6e16b23cb307dd8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digit-soft/re-action/zipball/98b474f06952c34d2886740541846c8cba28b0f9",
-                "reference": "98b474f06952c34d2886740541846c8cba28b0f9",
+                "url": "https://api.github.com/repos/digit-soft/re-action/zipball/123a6328c31e6d28257d3beb6e16b23cb307dd8c",
+                "reference": "123a6328c31e6d28257d3beb6e16b23cb307dd8c",
                 "shasum": ""
             },
             "require": {
                 "digit-soft/re-action-promise": "*",
-                "doctrine/common": "*",
+                "doctrine/annotations": "*",
+                "doctrine/cache": "*",
+                "ezyang/htmlpurifier": "~4.10",
                 "nikic/fast-route": "*",
                 "php": ">=7.0.0",
                 "php-di/php-di": "~6.0",
@@ -86,7 +88,7 @@
                 "react php framework",
                 "reactphp"
             ],
-            "time": "2018-04-13T15:01:56+00:00"
+            "time": "2018-04-19T11:53:53+00:00"
         },
         {
             "name": "digit-soft/re-action-promise",
@@ -94,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digit-soft/re-action-promise.git",
-                "reference": "f0f2e6c7c70aa8dd1d1c9a5e592a8c30bff2eccf"
+                "reference": "f1c7f8757711df49b17cd852b113d6838495be7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digit-soft/re-action-promise/zipball/f0f2e6c7c70aa8dd1d1c9a5e592a8c30bff2eccf",
-                "reference": "f0f2e6c7c70aa8dd1d1c9a5e592a8c30bff2eccf",
+                "url": "https://api.github.com/repos/digit-soft/re-action-promise/zipball/f1c7f8757711df49b17cd852b113d6838495be7b",
+                "reference": "f1c7f8757711df49b17cd852b113d6838495be7b",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +134,7 @@
                 "re-action promise",
                 "reactphp"
             ],
-            "time": "2018-04-11T07:41:17+00:00"
+            "time": "2018-04-19T11:21:33+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -278,236 +280,24 @@
             "time": "2018-04-12T11:17:53+00:00"
         },
         {
-            "name": "doctrine/collections",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/collections.git",
-                "reference": "25c9b48172190ddd9e6f6b1ce41f6270fe533f5a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/25c9b48172190ddd9e6f6b1ce41f6270fe533f5a",
-                "reference": "25c9b48172190ddd9e6f6b1ce41f6270fe533f5a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^4.0",
-                "phpstan/phpstan-shim": "^0.9.2",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Collections\\": "lib/Doctrine/Common/Collections"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Collections Abstraction library",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "array",
-                "collections",
-                "iterator"
-            ],
-            "time": "2018-04-03T02:45:15+00:00"
-        },
-        {
-            "name": "doctrine/common",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/common.git",
-                "reference": "ff8217b147a7c42019109e486975b9d6b82a98f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/ff8217b147a7c42019109e486975b9d6b82a98f5",
-                "reference": "ff8217b147a7c42019109e486975b9d6b82a98f5",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "1.*",
-                "doctrine/cache": "1.*",
-                "doctrine/collections": "1.*",
-                "doctrine/inflector": "1.*",
-                "doctrine/lexer": "1.*",
-                "php": "~7.1"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^1.0",
-                "phpunit/phpunit": "^6.3",
-                "squizlabs/php_codesniffer": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.9.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Common Library for Doctrine projects",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "annotations",
-                "collections",
-                "eventmanager",
-                "persistence",
-                "spl"
-            ],
-            "time": "2018-04-01T20:11:27+00:00"
-        },
-        {
-            "name": "doctrine/inflector",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "89aedcb9b2a568efdd2ab376e0f60f428c977858"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/89aedcb9b2a568efdd2ab376e0f60f428c977858",
-                "reference": "89aedcb9b2a568efdd2ab376e0f60f428c977858",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^3.0",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "inflection",
-                "pluralize",
-                "singularize",
-                "string"
-            ],
-            "time": "2018-04-11T05:54:08+00:00"
-        },
-        {
             "name": "doctrine/lexer",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "0ae9b6019e78ec667b2c87d10822af89f707fd1d"
+                "reference": "0cba197282d38956a3cc117f4b0b82b74ffb9749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/0ae9b6019e78ec667b2c87d10822af89f707fd1d",
-                "reference": "0ae9b6019e78ec667b2c87d10822af89f707fd1d",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/0cba197282d38956a3cc117f4b0b82b74ffb9749",
+                "reference": "0cba197282d38956a3cc117f4b0b82b74ffb9749",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5"
             },
             "type": "library",
             "extra": {
@@ -544,7 +334,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2018-04-11T05:15:14+00:00"
+            "time": "2018-04-17T13:18:24+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -588,6 +378,53 @@
                 "event-emitter"
             ],
             "time": "2017-07-23T21:35:13+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "nikic/fast-route",
