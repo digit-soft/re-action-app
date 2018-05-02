@@ -26,7 +26,6 @@ class SiteController
     public function actionIndex(AppRequestInterface $request)
     {
         return new Promise(function ($r, $c) use ($request) {
-            $message = 'Home page';
             try {
                 $sessionKey = date('Y_m_d__H_i');
                 $request->session->set($sessionKey, time());
