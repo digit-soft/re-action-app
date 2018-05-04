@@ -2,23 +2,25 @@
 
 namespace App\Controllers;
 
-use Psr\Http\Message\ServerRequestInterface;
+use Reaction\Annotations\CtrlAuth;
 use Reaction\Annotations\Ctrl;
 use Reaction\Annotations\CtrlAction;
 use Reaction\Promise\Promise;
-use Reaction\Web\Cookie;
+use Reaction\Routes\Controller;
 use Reaction\Web\AppRequestInterface;
 use Reaction\Web\Response;
 
 /**
  * @Ctrl
+ * @CtrlAuth()
  * Class SiteController
  * @package App\Controllers
  */
-class SiteController
+class SiteController extends Controller
 {
     /**
      * @CtrlAction(path="/test")
+     * @CtrlAuth()
      * Index action
      * @param AppRequestInterface $request
      * @return Promise
@@ -34,7 +36,7 @@ class SiteController
                     'getQuery' => $request->queryString,
                     'getQueryParams' => $request->queryParams,
                     'getCookies' => $request->cookies,
-                    'getHeaders' => $request->headers,
+                    //'getHeaders' => $request->headers,
                     'getContentType' => $request->contentType,
                     'getAbsoluteUrl' => $request->absoluteUrl,
                     'getUrl' => $request->url,
