@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Reaction\Annotations\CtrlAuth;
 use Reaction\Annotations\Ctrl;
 use Reaction\Annotations\CtrlAction;
+use Reaction\Helpers\Url;
 use Reaction\Promise\Promise;
 use Reaction\Routes\Controller;
 use Reaction\Web\AppRequestInterface;
@@ -12,7 +13,7 @@ use Reaction\Web\Response;
 
 /**
  * @Ctrl
- * @CtrlAuth()
+ * @CtrlAuth
  * Class SiteController
  * @package App\Controllers
  */
@@ -20,7 +21,7 @@ class SiteController extends Controller
 {
     /**
      * @CtrlAction(path="/test")
-     * @CtrlAuth()
+     * @CtrlAuth
      * Index action
      * @param AppRequestInterface $request
      * @return Promise
@@ -58,5 +59,30 @@ class SiteController extends Controller
             $response = (new Response(200, [], $message))->withAddedHeader('test', 'test');
             $r($response);
         });
+    }
+
+    /**
+     * @CtrlAction(path="/test1/test2/{name:\w+}")
+     * @param AppRequestInterface $request
+     * @return \Reaction\Web\ResponseBuilderInterface
+     */
+    public function actionTest(AppRequestInterface $request)
+    {
+        $request->response->setBody('Test');
+        return $request->response;
+    }
+
+    /**
+     * @CtrlAction(path="/test2/{name:\w+}[/{id:\d+}]", method={"GET","POST"})
+     * @param AppRequestInterface $request
+     * @return \Reaction\Web\ResponseBuilderInterface
+     */
+    public function actionTest2(AppRequestInterface $request, $name)
+    {
+        $args = func_get_args();
+        array_shift($args);
+        $args[] = Url::current([], false, $request);
+        $request->response->setBody(print_r($args, true));
+        return $request->response;
     }
 }
