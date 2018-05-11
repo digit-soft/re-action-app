@@ -2,7 +2,7 @@
 //Main config for all application
 return [
     //Application config
-    'app' => [
+    'appStatic' => [
         'charset' => 'utf-8',
         'hostname' => '0.0.0.0', //For docker - expose to all interfaces
         'port' => 4000,
