@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Console run file
+ * @var \Composer\Autoload\ClassLoader $composer
+ */
+$composer = require(__DIR__ . '/vendor/autoload.php');
+
+Reaction::init($composer, dirname(__FILE__) . '/Config', 'console');
+
+Reaction::$app->run();
