@@ -9,11 +9,18 @@ return [
         //Initial app aliases
         'aliases' => [],
         //Components
-        'components' => [],
+        'components' => [
+            //DB auth manager
+            'authManager' => [
+                'class' => 'Reaction\Rbac\ManagerInterface',
+            ],
+        ],
     ],
     //DI definitions and config
     'container' => [
+        'definitions' => [
+            'Reaction\Rbac\ManagerInterface' => 'Reaction\Rbac\DbManager',
+        ],
         'singletons' => [ ],
-        'definitions' => [ ],
     ],
 ];
