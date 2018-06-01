@@ -16,6 +16,16 @@ return [
             ],
         ],
     ],
+    //Request application config
+    'appRequest' => [
+        'class' => 'Reaction\RequestApplicationInterface',
+        'components' => [
+            'user' => [
+                'class' => 'Reaction\Web\UserInterface',
+                'identityClass' => 'App\Models\User',
+            ],
+        ],
+    ],
     //DI definitions and config
     'container' => [
         'definitions' => [
