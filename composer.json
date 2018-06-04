@@ -12,7 +12,8 @@
         "psr-4": { "App\\": "" }
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.10.0@dev"
+        "phpstan/phpstan": "^0.10.0@dev",
+        "phpunit/phpunit": "^7"
     },
     "repositories": [
         {
