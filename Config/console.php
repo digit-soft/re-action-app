@@ -13,7 +13,8 @@ return [
                     'migrate' => [
                         'class' => 'Reaction\Console\Controllers\MigrateController',
                         'migrationNamespaces' => [
-                            'Reaction\Web\Sessions\Migrations'
+                            'Reaction\Web\Sessions\Migrations',
+                            'Reaction\Rbac\Migrations',
                         ],
                     ]
                 ],
