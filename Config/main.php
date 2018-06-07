@@ -30,6 +30,7 @@ return [
     'container' => [
         'definitions' => [
             'Reaction\Rbac\ManagerInterface' => 'Reaction\Rbac\DbManager',
+            'Reaction\Web\Sessions\SessionArchiveInterface' => 'Reaction\Web\Sessions\SessionArchiveInDb',
         ],
         'singletons' => [ ],
     ],
