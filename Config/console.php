@@ -15,6 +15,7 @@ return [
                         'migrationNamespaces' => [
                             'Reaction\Web\Sessions\Migrations',
                             'Reaction\Rbac\Migrations',
+                            'Reaction\I18n\Migrations',
                         ],
                     ]
                 ],
